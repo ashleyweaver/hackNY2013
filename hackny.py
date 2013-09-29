@@ -15,9 +15,9 @@ data = json.loads(response.text)
 for test in data['results']:
         list=test['name']
         print(list)
-        urll = "http://api.nytimes.com/svc/search/v1/article?query=bob&api-key=f        7eeff97d545f21eef9fe0ecdf99b655:17:68190350"
+        list = "%22" + str(list) +"%22"
+        urll = "http://api.nytimes.com/svc/search/v1/article?format=json&query=%        s&api-key=f7eeff97d545f21eef9fe0ecdf99b655:17:68190350"%(list)
         response1 = requests.get(urll)
-        print(response1)
         data1 = json.loads(response1.text)
 pp.pprint(data1)
 
