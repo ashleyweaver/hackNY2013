@@ -1,4 +1,5 @@
 import requests
+import urllib2
 import pprint
 from geopy import geocoders
 import json
@@ -7,11 +8,17 @@ pp = pprint.PrettyPrinter(indent=4)
 address = raw_input('Enter the address: ')
 place, (lat, lng) = g.geocode(address)
 print "%s: %.5f, %.5f" % (place, lat, lng)
-url = "http://api.nytimes.com/svc/semantic/v2/geocodes/query.json?nearby=%s,%s&api-key=04e6236f0ac7eb2e6e57528dbb5dec8f:14:68190350" %(lat,lng)
+url = "https://maps.googleapis.com/maps/api/place/search/json?location=%s,%s&radius=10&sensor=false&key=AIzaSyBYRMJfTpRcV-KEPuyzidZDXhvptBse6us" %(lat,lng)
 
 response = requests.get(url)
 data = json.loads(response.text)
-pp.pprint(data)
-
+for test in data['results']:
+        list=test['name']
+        print(list)
+        urll = "http://api.nytimes.com/svc/search/v1/article?query=bob&api-key=f        7eeff97d545f21eef9fe0ecdf99b655:17:68190350"
+        response1 = requests.get(urll)
+        print(response1)
+        data1 = json.loads(response1.text)
+pp.pprint(data1)
 
 
