@@ -1,1 +1,1 @@
-web: gunicorn taskerflags:app
+web: gunicorn geokeywords:app
