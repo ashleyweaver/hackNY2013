@@ -31,4 +31,5 @@ def index():
                     response = urllib.urlopen(listurl)
                     for urlline in response.read():
                          file.write(urlline)
-    return render_template('index.html')
+if __name__ == "__main__":
+    app.run()
