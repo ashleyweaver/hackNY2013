@@ -9,7 +9,9 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 @app.route("/")
-return render_template('index.html')
+def index():
+    return render_template('index.html')
+
 g = geocoders.GoogleV3()
 pp = pprint.PrettyPrinter(indent=4)
 address = raw_input('Enter the address: ')
