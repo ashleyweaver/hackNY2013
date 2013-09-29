@@ -33,5 +33,5 @@ for test in data['results']:
                 response = urllib.urlopen(listurl)
                 for urlline in response.read():
                      file.write(urlline)
-'''if __name__ == "__main__":
-    app.run()'''
+if __name__ == "__main__":
+    app.run()
