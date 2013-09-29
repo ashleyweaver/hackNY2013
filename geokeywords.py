@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-'''g = geocoders.GoogleV3()
+g = geocoders.GoogleV3()
 pp = pprint.PrettyPrinter(indent=4)
 address = raw_input('Enter the address: ')
 place, (lat, lng) = g.geocode(address)
@@ -32,6 +32,6 @@ for test in data['results']:
                 listurl=str(urtest['url'])
                 response = urllib.urlopen(listurl)
                 for urlline in response.read():
-                     file.write(urlline)'''
-if __name__ == "__main__":
-    app.run()
+                     file.write(urlline)
+'''if __name__ == "__main__":
+    app.run()'''
