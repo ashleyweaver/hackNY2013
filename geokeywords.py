@@ -4,7 +4,6 @@ import urllib
 import pprint
 from geopy import geocoders
 import json
-import requests
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
