@@ -13,7 +13,7 @@ def index():
     pp = pprint.PrettyPrinter(indent=4)
     #address = raw_input('Enter the address: ')
     place, (lat, lng) = g.geocode(address)
-    print "%s: %.5f, %.5f" % (place, lat, lng)
+    #print "%s: %.5f, %.5f" % (place, lat, lng)
     url = "https://maps.googleapis.com/maps/api/place/search/json?location=%s,%s&radius=10&sensor=false&key=AIzaSyBYRMJfTpRcV-KEPuyzidZDXhvptBse6us" %(lat,lng)
     #Request
     response = requests.get(url)
