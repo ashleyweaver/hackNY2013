@@ -1,5 +1,6 @@
 import requests
 import urllib2
+import urllib
 import pprint
 from geopy import geocoders
 import json
@@ -15,14 +16,14 @@ data = json.loads(response.text)
 file = open('alchemy.txt', 'w+')
 for test in data['results']:
         list=test['name']
-        print(list)
         list = "%22" + str(list) +"%22"
         urll = "http://api.nytimes.com/svc/search/v1/article?format=json&query=%s&api-key=f7eeff97d545f21eef9fe0ecdf99b655:17:68190350"%         (list)
         response1 = requests.get(urll)
         data1 = json.loads(response1.text)
         for urtest in data1['results']:
-                listurl=urtest['url']
-                response = urllib2.urlopen('http://python.org/')
+		
+                listurl=str(urtest['url'])
+                response = urllib.urlopen(listurl)
                 for urlline in response.read():
-                        file.write(urlline)
-
+                     file.write(urlline) 
+		
