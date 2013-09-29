@@ -1,1 +1,1 @@
-web: gunicorn geokeywords:app
+web: gunicorn hello:app
